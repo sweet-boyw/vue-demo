@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="./lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span>hello</span>
+        <span v-show='isShow'>我不是一直都在！</span>
+        <button @click.stop="isShow = !isShow">点我</button>
+        <my-child>
+            wahaha~
+        </my-child>
+        <template v-if=true>
+            <h1>title</h1>
+            <p>paragraph1</p>
+            <p>paragraph2</p>
+        </template>
+        <div v-if="type == 'A'">
+            A
+        </div>
+        <div v-else-if="type == 'B'">
+            B
+        </div>
+        <div v-else="type =='C'">
+            C
+        </div>
+        <template v-if="loginType === 'username'">
+                <label>Username</label>
+                <input placeholder="Enter your username" key="username-input">
+            </template>
+            <template v-else>
+                <label>Email</label>
+                <input placeholder="Enter your email address" key="email-input">
+        </template>
+    </div>
+    <script>
+        var Child = {
+            template:`
+            <div>
+                child
+                <slot></slot>
+            </div>
+            `
+        }
+        var App = new Vue({
+            el:"#app",
+            components:{
+                "my-child":Child
+            },
+            data:{
+                type:'C',
+                loginType:'username',
+                isShow:true
+             }
+        })
+    </script>
+</body>
+</html>

@@ -4,6 +4,9 @@ git init 初始化当前目录
 git status 查看当前文件状态
 git branch 查看分支 *表示当前分支  
 git checkout branch 切换分支branch  
+git diff 比较差异
+git diff --cached比较和已提交的差异  
+
 git push 提交到远程代码
 git pull 从远程拉取代码
 git checkout -b dev 创建并切换到dev分支

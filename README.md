@@ -1,5 +1,7 @@
 # vue-demo
 # git命令
+git init 初始化当前目录  
+git status 查看当前文件状态
 git branch 查看分支 *表示当前分支  
 git checkout branch 切换分支branch  
 git push 提交到远程代码

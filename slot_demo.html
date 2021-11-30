@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slot—demo</title>
+    <script src="./lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{date}}</div>
+        <my-child>
+            <h1>title</h1>
+        </my-child>
+        <my-child>
+            <h2>content</h2>
+            <p>{{message}}</p>
+        </my-child>
+        <save-btn>
+            save
+        </save-btn>
+        <save-btn></save-btn><!--  加入后备内容，不写默认slot的值-->
+        <!-- 具名插槽 -->
+        <my-child>
+            <!-- <div slot="s1">
+                <p>Make sure to turn on production mode when deploying for production.</p>
+            </div>
+            <div slot="s2">
+                <p>See more tips</p>
+            </div>
+            <div>
+                <a href="www.baidu.com">baidu</a>
+            </div> -->
+            <!-- 2.6以后的版本基本都使用v-slot 上面的写法已经废弃 -->
+            <template v-slot:s1>
+                <p>Make sure to turn on production mode when deploying for production.</p>
+            </template>
+            <template v-slot:s2>
+                <p>See more tips</p>
+            </template>
+            <div>
+                <a href="www.baidu.com" style="color: black;text-decoration: none;">baidu</a>
+            </div>
+        </my-child>
+        <!-- 利用组件插槽实现子传父 -->
+        <my-child>
+            <template v-slot:s3="data">
+                <div>{{data.data}}</div>
+            </template>
+            <template #s4="{data,data2}">
+                <div>{{data}}</div>
+                <div>{{data2}}</div>
+            </template>
+            <template #s5="da">
+                <div>{{da.data}}</div>
+            </template>
+            <template v-slot:default="d">
+                <a href="www.baidu.com" style="color: black;text-decoration: none;">{{d.data3}}</a>
+            </template>
+            <template #[str]="da">
+                <div>{{da.data}}</div>
+            </template>
+        </my-child>
+    </div>
+    <script>
+        var Child = {
+            template:`
+            <div>
+                child
+                <slot></slot>
+                <slot name="s1"></slot>
+                <slot name="s2"></slot>
+                <slot name="s3" :data="msg"></slot>
+                <slot name="s4" :data="msg" :data2="content"></slot>
+                <slot name="s5" :data="text"></slot>
+                <slot name="s6" :data="text"></slot>
+                <slot :data3="text3"></slot>
+            </div>
+            `,
+            data(){
+                return{
+                    msg:"Budibase is an open-source low-code platform",
+                    text:"Supports PostgreSQL, MySQL, MSSQL, MongoDB, Rest API, Docker, K8s",
+                    content:"It was a long time before I met the author of the notes.",
+                    text3:'百度'
+                }
+            }
+        }
+        var saveBtn = {
+            template:`
+                <button>
+                    <slot>submit</slot>
+                </button>
+            `
+        }
+        var app = new Vue({
+            el:"#app",
+            components:{
+                "my-child":Child,
+                "save-btn":saveBtn
+            },
+            data:{ 
+                date:new Date(),
+                message:'You are running Vue in development mode.',
+                str:'s6'
+            }
+        })
+    </script>
+</body>
+</html>

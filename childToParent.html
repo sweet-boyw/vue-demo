@@ -10,8 +10,8 @@
 
 <body>
     <div id="app">
-        <my-child @sendToParent="getChild">
-
+        <p>{{num}}</p>
+        <my-child @sendtoparent="getChild">
         </my-child>
     </div>
     <script>
@@ -29,7 +29,7 @@
             },
             methods:{
                 handleToParent(){
-                    this.$emit('sendToParent',this.count)
+                    this.$emit('sendtoparent',this.count++)
                 }
             }
         }
@@ -38,10 +38,13 @@
             components:{
                 "my-child":child
             },
-            data:{ },
+            data:{
+                num:''
+            },
             methods:{
                 getChild(count){
-                    console.log(count)
+                    this.num = count
+                    console.log(this.num)
                 }
             }
         })

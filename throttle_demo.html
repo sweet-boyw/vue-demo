@@ -1,0 +1,57 @@
+<!--
+ * @Author: sweet-boyw
+ * @Date: 2021-12-01 13:36:46
+ * @LastEditTime: 2021-12-01 14:40:17
+ * @LastEditors: Please set LastEditors
+ * @Description: 节流函数
+ * @FilePath: \demospace\vue-demo\throttle_demo.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节流函数</title>
+    <script src="./lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span>节流函数</span>
+        <input type="text" v-model="content" @input="trottleFun(ajax,1000)(content)">
+        <span>{{content}}</span>
+    </div>
+    <script>
+        var App = new Vue({
+            el:"#app",
+            data:{ 
+                content:''
+            },
+            methods:{
+                trottleFun:function(fun,delay){
+                    let last,deferTimer
+                    return function(args){
+                        let _this = this
+                        let _args = args
+                        let now = +new Date()//获取时间戳
+                        if(last && now < last + delay){
+                            clearTimeout(deferTimer)
+                            deferTimer = setTimeout(() => {
+                                last = now
+                                fun.call(_this,_args)
+                            }, delay);
+                        }else{
+                            last = now
+                            fun.call(_this,_args)
+                        }
+                    }
+                },
+                ajax:function(content){
+                    console.log("ajax requests " + content)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -39,17 +39,24 @@
             text-align: center;
             line-height: 5vh;
         }
+        ul > li.active{
+            background-color: chocolate;
+            color: #fff;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
         <main>
-            <components :is="componentId">
-            </components>
+            <components :is="componentId"></components>
         </main>
         <ul>
-            <li v-for="(item,index) in componentsItems" :key=index>
+            <li 
+            v-for="(item,index) in componentsItems"
+            :key=index
+            @click="changepage(index,item.titleID)"
+            :class="{active:curIndex == index}">
                 {{item.title}}
             </li>
         </ul>
@@ -92,7 +99,14 @@
                         titleID:"component3"
                     },
                 ],
-                componentId:"component1"
+                componentId:"component1",
+                curIndex:0
+            },
+            methods:{
+                changepage(index,titleID){
+                    this.curIndex = index
+                    this.componentId = titleID
+                }
             }
         })
     </script>

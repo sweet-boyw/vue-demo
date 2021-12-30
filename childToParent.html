@@ -1,3 +1,11 @@
+<!--
+ * @Author: sweet-boyw
+ * @Date: 2021-11-30 15:05:06
+ * @LastEditTime: 2021-12-29 10:04:24
+ * @LastEditors: Please set LastEditors
+ * @Description: 子组件到父组件
+ * @FilePath: \vue-demo\childToParent.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +39,7 @@
                 handleToParent(){
                     this.$emit('sendtoparent',this.count++)
                 }
-            }
+            }  
         }
         var App = new Vue({
             el:"#app",

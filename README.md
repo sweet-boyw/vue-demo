@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-29 17:16:21
+ * @LastEditTime: 2021-12-30 21:47:39
+ * @LastEditors: your name
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \vue-demo\README.md
+-->
 # vue-demo
 # git命令
 git init 初始化当前目录  
@@ -18,4 +26,5 @@ git commit -m '提交描述'
 git checkout main 切换到需要合并到的分支  
 git merge dev （dev是从dev合并过来的分支）  
 git branch -d dev(删掉dev分支)如果需要  
+git remote add http://xxx.xxx 建立远程连接之后再git push
 #    

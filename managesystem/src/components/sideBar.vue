@@ -1,13 +1,15 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-15 08:29:03
- * @LastEditTime: 2022-02-15 08:58:59
+ * @LastEditTime: 2022-02-25 08:59:27
  * @LastEditors: Please set LastEditors
  * @Description: 侧边栏
  * @FilePath: \vue-demo\managesystem\src\components\sideBar.vue
 -->
 <template>
-    <div class="side-bar">sideBar</div>
+    <div class="side-bar">
+        
+    </div>
 </template>
 <script>
 export default {

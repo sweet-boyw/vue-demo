@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-14 10:36:41
- * @LastEditTime: 2022-02-17 08:45:18
+ * @LastEditTime: 2022-03-07 09:02:25
  * @LastEditors: Please set LastEditors
  * @Description: 项目入口配置、组件引入
  * @FilePath: \vue-demo\managesystem\src\main.js
@@ -13,6 +13,7 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import echart from 'echarts'
+import '@/api/http.js'
 
 Vue.prototype.$echarts = echart
 Vue.use(ElementUI)

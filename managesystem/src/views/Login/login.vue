@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-14 17:16:43
- * @LastEditTime: 2022-03-04 21:16:52
+ * @LastEditTime: 2022-03-07 09:02:47
  * @LastEditors: Please set LastEditors
  * @Description: 登录页面
  * @FilePath: \vue-demo\managesystem\src\views\Login\login.vue
@@ -37,9 +37,12 @@ export default {
     methods:{
         handleLogin(){
             console.log(this.email,this.password)
+            // const data = this.password
+            const res = this.$http.getCode()
+            console.log(res)
             const token = 'ahdfksh'
             window.sessionStorage.setItem('token',token)
-            this.$router.push('/')
+            // this.$router.push('/')
         }
     }
 }

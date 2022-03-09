@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-14 17:16:43
- * @LastEditTime: 2022-03-07 09:02:47
+ * @LastEditTime: 2022-03-08 11:08:38
  * @LastEditors: Please set LastEditors
  * @Description: 登录页面
  * @FilePath: \vue-demo\managesystem\src\views\Login\login.vue
@@ -26,6 +26,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     name:'login',
     data(){
@@ -35,10 +36,10 @@ export default {
         }
     },
     methods:{
-        handleLogin(){
+        async handleLogin(){
             console.log(this.email,this.password)
             // const data = this.password
-            const res = this.$http.getCode()
+            const res = await axios.get('http://192.168.100.47:5000/index')
             console.log(res)
             const token = 'ahdfksh'
             window.sessionStorage.setItem('token',token)

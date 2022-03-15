@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-14 17:16:43
- * @LastEditTime: 2022-03-08 11:08:38
+ * @LastEditTime: 2022-03-11 17:01:43
  * @LastEditors: Please set LastEditors
  * @Description: 登录页面
  * @FilePath: \vue-demo\managesystem\src\views\Login\login.vue
@@ -36,13 +36,13 @@ export default {
         }
     },
     methods:{
-        async handleLogin(){
+        handleLogin(){
             console.log(this.email,this.password)
             // const data = this.password
-            const res = await axios.get('http://192.168.100.47:5000/index')
-            console.log(res)
-            const token = 'ahdfksh'
-            window.sessionStorage.setItem('token',token)
+            axios.post('/login')
+            // console.log(res)
+            // const token = 'ahdfksh'
+            // window.sessionStorage.setItem('token',token)
             // this.$router.push('/')
         }
     }

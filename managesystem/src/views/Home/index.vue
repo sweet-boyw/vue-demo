@@ -1,28 +1,11 @@
 <!--
  * @Author: your name
- * @Date: 2022-02-14 17:14:46
- * @LastEditTime: 2022-02-15 15:54:09
- * @LastEditors: Please set LastEditors
- * @Description: 登录后首页
+ * @Date: 2022-03-21 20:32:42
+ * @LastEditTime: 2022-03-21 20:32:56
+ * @LastEditors: your name
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \vue-demo\managesystem\src\views\Home\index.vue
 -->
 <template>
-    <div class="index">
-        <MHeader />
-        <SideBar/>
-        <PageBroad />
-    </div>
+    <div class="home">首页</div>
 </template>
-<script>
-import MHeader from '@/components/Header'
-import SideBar from '@/components/sideBar'
-import PageBroad from '@/components/pageBroad'
-export default {
-  name:'index',
-  components:{
-    MHeader,
-    SideBar,
-    PageBroad
-  }
-}
-</script>

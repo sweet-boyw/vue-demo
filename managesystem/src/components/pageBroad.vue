@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-15 08:28:50
- * @LastEditTime: 2022-02-15 08:58:16
+ * @LastEditTime: 2022-03-21 17:20:29
  * @LastEditors: Please set LastEditors
  * @Description: 
  * @FilePath: \vue-demo\managesystem\src\components\pageBroad.vue
@@ -23,6 +23,6 @@ export default {
     left: 0%;
     width: 100%;
     height: 100%;
-    padding: 90px 90px 30px 90px;
+    padding: 120px 190px 30px 190px;
 }
 </style>

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-14 10:36:41
- * @LastEditTime: 2022-03-04 21:17:52
+ * @LastEditTime: 2022-03-22 08:27:40
  * @LastEditors: Please set LastEditors
  * @Description: 前端路由管理，路由守卫
  * @FilePath: \vue-demo\managesystem\src\router\index.js
@@ -20,15 +20,56 @@ const routes = [
     component: () => import('@/views/Login/login')
   },
   {
-    path:'/index',
-    name:'home',
-    component:() => import('@/views/Home')
-  },
-  {
     path:'/',
-    name:'index',
-    component:() =>import('@/views/Home/index'),
-    // children:[promission]
+    name:'home',
+    component:() => import('@/views/Home'),
+    children:[
+      {
+        path:'/index',
+        name:'Home',
+        component:() => import('@/views/Home/index.vue')
+      },
+      {
+        path:'/data',
+        name:'Home',
+        component:() => import('@/views/Home/index.vue')
+      },
+      {
+        path:'/index',
+        name:'Home',
+        component:() => import('@/views/Home/index.vue')
+      },
+      {
+        path:'/index',
+        name:'Home',
+        component:() => import('@/views/Home/index.vue')
+      },
+      {
+        path:'/index',
+        name:'Home',
+        component:() => import('@/views/Home/index.vue')
+      },
+      {
+        path:'/index',
+        name:'Home',
+        component:() => import('@/views/Home/index.vue')
+      },
+      {
+        path:'/index',
+        name:'Home',
+        component:() => import('@/views/Home/index.vue')
+      },
+      {
+        path:'/index',
+        name:'Home',
+        component:() => import('@/views/Home/index.vue')
+      },
+      {
+        path:'/index',
+        name:'Home',
+        component:() => import('@/views/Home/index.vue')
+      },
+    ]
   },
   {
     path:'/mytestside',

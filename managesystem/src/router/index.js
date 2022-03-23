@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-14 10:36:41
- * @LastEditTime: 2022-03-22 08:27:40
+ * @LastEditTime: 2022-03-22 08:47:29
  * @LastEditors: Please set LastEditors
  * @Description: 前端路由管理，路由守卫
  * @FilePath: \vue-demo\managesystem\src\router\index.js
@@ -35,9 +35,9 @@ const routes = [
         component:() => import('@/views/Home/index.vue')
       },
       {
-        path:'/index',
-        name:'Home',
-        component:() => import('@/views/Home/index.vue')
+        path:'/searchdata',
+        name:'SearchData',
+        component:() => import('@/views/search/searchData.vue')
       },
       {
         path:'/index',

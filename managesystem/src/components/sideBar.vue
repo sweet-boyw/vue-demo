@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-15 08:29:03
- * @LastEditTime: 2022-03-21 20:41:25
+ * @LastEditTime: 2022-03-22 09:02:18
  * @LastEditors: Please set LastEditors
  * @Description: 侧边栏
  * @FilePath: \vue-demo\managesystem\src\components\sideBar.vue
@@ -26,7 +26,8 @@ export default {
             treeData:[
                 {id:1,name:'首页',path:'/index'},
                 {id:2,name:'数据中心',path:'/data',children:[
-                    {id:3,name:'数据管理',path:'/datacenter'}
+                    {id:3,name:'数据管理',path:'/datacenter'},
+                    {id:14,name:'数据查询',path:'/searchdata'}
                 ]},
                 {id:4,name:'博客',path:'/blog'},
                 {id:5,name:'数据收藏',path:'/blog'},

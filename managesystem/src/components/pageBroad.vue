@@ -1,19 +1,28 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-15 08:28:50
- * @LastEditTime: 2022-03-22 09:39:43
+ * @LastEditTime: 2022-04-14 22:36:01
  * @LastEditors: Please set LastEditors
  * @Description: 
  * @FilePath: \vue-demo\managesystem\src\components\pageBroad.vue
 -->
 <template>
     <div class="page-broad">
-        <router-view></router-view>
+        <div class="tags-box">
+            <tags-box></tags-box>
+        </div>
+        <div class="router-exit">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 <script>
+import tagsBox from '@/components/tagsBox'
 export default {
-    name:'pageBroad'
+    name:'pageBroad',
+    components:{
+        tagsBox
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -23,6 +32,6 @@ export default {
     left: 0%;
     width: 88%;
     height: 100%;
-    padding: 120px 190px 30px 190px;
+    padding: 170px 190px 30px 190px;
 }
 </style>

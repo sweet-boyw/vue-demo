@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-15 08:28:38
- * @LastEditTime: 2022-03-21 17:10:36
+ * @LastEditTime: 2022-03-28 18:47:50
  * @LastEditors: Please set LastEditors
  * @Description: 顶部导航栏
  * @FilePath: \vue-demo\managesystem\src\components\Header.vue
@@ -20,7 +20,7 @@
             </el-dropdown>
         </div>
     </div>
-</template>
+</template>  
 <style scoped lang="scss">
 .header{
     position: fixed;

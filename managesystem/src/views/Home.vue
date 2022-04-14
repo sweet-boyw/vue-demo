@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-14 17:14:46
- * @LastEditTime: 2022-03-21 20:30:53
+ * @LastEditTime: 2022-04-14 22:34:44
  * @LastEditors: Please set LastEditors
  * @Description: 登录后首页
  * @FilePath: \vue-demo\managesystem\src\views\Home\index.vue
@@ -22,7 +22,7 @@ export default {
   components:{
     MHeader,
     SideBar,
-    PageBroad
+    PageBroad,
   }
 }
 </script>

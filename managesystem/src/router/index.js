@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-14 10:36:41
- * @LastEditTime: 2022-03-22 08:47:29
+ * @LastEditTime: 2022-04-14 23:36:47
  * @LastEditors: Please set LastEditors
  * @Description: 前端路由管理，路由守卫
  * @FilePath: \vue-demo\managesystem\src\router\index.js
@@ -26,49 +26,44 @@ const routes = [
     children:[
       {
         path:'/index',
-        name:'Home',
-        component:() => import('@/views/Home/index.vue')
-      },
-      {
-        path:'/data',
-        name:'Home',
+        name:'首页',
         component:() => import('@/views/Home/index.vue')
       },
       {
         path:'/searchdata',
-        name:'SearchData',
+        name:'数据查询',
         component:() => import('@/views/search/searchData.vue')
       },
       {
-        path:'/index',
-        name:'Home',
-        component:() => import('@/views/Home/index.vue')
+        path:'/datamanage',
+        name:'数据管理',
+        component:() => import('@/views/data/dataManage.vue')
       },
       {
-        path:'/index',
-        name:'Home',
-        component:() => import('@/views/Home/index.vue')
+        path:'/blog',
+        name:'博客',
+        component:() => import('@/views/blog/blog.vue')
       },
       {
-        path:'/index',
-        name:'Home',
-        component:() => import('@/views/Home/index.vue')
+        path:'/collection_data',
+        name:'数据收藏',
+        component:() => import('@/views/collection/collectionData.vue')
       },
       {
-        path:'/index',
-        name:'Home',
-        component:() => import('@/views/Home/index.vue')
+        path:'/document_manage',
+        name:'文档管理',
+        component:() => import('@/views/manage/documentManage.vue')
       },
       {
-        path:'/index',
-        name:'Home',
-        component:() => import('@/views/Home/index.vue')
+        path:'/article',
+        name:'好文章',
+        component:() => import('@/views/article/article.vue')
       },
       {
-        path:'/index',
-        name:'Home',
-        component:() => import('@/views/Home/index.vue')
-      },
+        path:'/docu_download',
+        name:'文件下载',
+        component:() => import('@/views/download/docuDownload.vue')
+      }
     ]
   },
   {
@@ -86,10 +81,10 @@ router.beforeEach((to,from,next) =>{
   if(to.path === '/login') return next()
   const token = window.sessionStorage.getItem('token')
   if(!token){
-    console.log('没登录')
+    // console.log('没登录')
     next('/login')
   }else{
-    console.log('登录了')
+    // console.log('登录了')
     next()
   }
 })

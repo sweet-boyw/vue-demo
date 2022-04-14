@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-25 09:03:29
- * @LastEditTime: 2022-04-14 23:49:15
+ * @LastEditTime: 2022-04-15 00:02:27
  * @LastEditors: Please set LastEditors
  * @Description: 组件递归、实现动态侧边导航栏
  * @FilePath: \demospace\vue-demo\managesystem\src\components\mySide.vue
@@ -60,5 +60,6 @@ button{
   border: none;
   background: none;
   color: #fff;
+  font-size: 18px;
 }
 </style>

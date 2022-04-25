@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-04-14 22:12:14
- * @LastEditTime: 2022-04-14 23:30:17
+ * @LastEditTime: 2022-04-18 09:02:40
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \managesystem\src\components\tagsBox.vue
@@ -72,14 +72,14 @@ export default {
     },
     methods: {
       handleTabsEdit(target) {
-          if(target == '/'||target == '/index'){
+          if(target == '/'|| target == '/index'){
                 return
             }
             this.$store.commit('delete_tabs', target)
             if (this.activeIndex === target) {
                 // 设置当前激活的路由
                 if (this.openTab && this.openTab.length >= 1) {
-                console.log('=============', this.openTab[this.openTab.length - 1].route)
+                // console.log('=============', this.openTab[this.openTab.length - 1].route)
                 this.$store.commit('set_active_index', this.openTab[this.openTab.length - 1].route)
                 this.$router.push({path: this.activeIndex})
                 }

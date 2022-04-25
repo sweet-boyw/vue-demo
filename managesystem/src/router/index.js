@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-14 10:36:41
- * @LastEditTime: 2022-04-14 23:36:47
+ * @LastEditTime: 2022-04-21 11:17:04
  * @LastEditors: Please set LastEditors
  * @Description: 前端路由管理，路由守卫
  * @FilePath: \vue-demo\managesystem\src\router\index.js
@@ -63,6 +63,11 @@ const routes = [
         path:'/docu_download',
         name:'文件下载',
         component:() => import('@/views/download/docuDownload.vue')
+      },
+      {
+        path:'/upload',
+        name:'文件上传',
+        component:() =>import('@/views/upload/upload.vue')
       }
     ]
   },
@@ -81,10 +86,8 @@ router.beforeEach((to,from,next) =>{
   if(to.path === '/login') return next()
   const token = window.sessionStorage.getItem('token')
   if(!token){
-    // console.log('没登录')
     next('/login')
   }else{
-    // console.log('登录了')
     next()
   }
 })

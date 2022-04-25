@@ -1,9 +1,9 @@
 /*
  * @Author: your name
  * @Date: 2022-03-22 16:53:34
- * @LastEditTime: 2022-03-22 17:07:19
+ * @LastEditTime: 2022-04-24 11:05:40
  * @LastEditors: Please set LastEditors
- * @Description: 这里封装公共方法
+ * @Description: 封装公共方法
  * @FilePath: \vue-demo\managesystem\src\utile\utile.js
  */
 const utile = {

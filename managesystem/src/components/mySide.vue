@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-25 09:03:29
- * @LastEditTime: 2022-04-15 00:02:27
+ * @LastEditTime: 2022-04-15 16:19:09
  * @LastEditors: Please set LastEditors
  * @Description: 组件递归、实现动态侧边导航栏
  * @FilePath: \demospace\vue-demo\managesystem\src\components\mySide.vue
@@ -10,7 +10,7 @@
     <div class="my-side-bar">
         <div class="tree-item" v-for="item in treeData" :key="item.id">
             <div class="item-title">
-              <button @click="toPath(item.path)" :disabled="item.path === '/'">
+              <button @click="toPath(item.path)">
                 {{item.name}}
                 <i :class="isShowChild?'el-icon-arrow-down':'el-icon-arrow-up'" v-if="item.children" @click="handleShowChild()"></i>
               </button>
@@ -37,7 +37,11 @@ export default {
     },
     methods:{
       toPath(path){
-        this.$router.push(path)
+        if(path === '/'){
+          this.isShowChild = !this.isShowChild
+        }else{
+          this.$router.push(path)
+        }
       },
       handleShowChild(){
         this.isShowChild = !this.isShowChild
@@ -61,5 +65,6 @@ button{
   background: none;
   color: #fff;
   font-size: 18px;
+  cursor: pointer;
 }
 </style>

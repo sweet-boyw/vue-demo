@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-15 08:28:38
- * @LastEditTime: 2022-03-28 18:47:50
+ * @LastEditTime: 2022-04-19 14:34:08
  * @LastEditors: Please set LastEditors
  * @Description: 顶部导航栏
  * @FilePath: \vue-demo\managesystem\src\components\Header.vue
@@ -14,13 +14,34 @@
                 <span>wangxingjiang</span>
                 <i class="el-icon-arrow-down el-icon--right"></i>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item><router-link to="/center" tag="a">个人中心</router-link></el-dropdown-item>
-                    <el-dropdown-item><router-link to="/login" tag="a">退出登录</router-link></el-dropdown-item>
+                    <el-dropdown-item>
+                        <button @click="handlelogout">注销登录</button>
+                    </el-dropdown-item>
+                    <el-dropdown-item>
+                        <button>退出登录</button>
+                    </el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
         </div>
     </div>
-</template>  
+</template>
+<script>
+export default {
+    data(){
+        return{
+
+        }
+    },
+    methods:{
+        handlelogout(){
+            this.$store.state.openTab = []
+            this.$store.state.activeIndex = ''
+            window.sessionStorage.removeItem('Token')
+            this.$router.push('/login')
+        }
+    }
+}
+</script>
 <style scoped lang="scss">
 .header{
     position: fixed;
@@ -43,8 +64,8 @@
     width: 15%;
     color: #000;
 }
-a{
-    text-decoration: none;
-    color: #000;
+button{
+    border: none;
+    background: none;
 }
 </style>

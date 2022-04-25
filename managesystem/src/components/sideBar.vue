@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-15 08:29:03
- * @LastEditTime: 2022-04-14 23:44:12
+ * @LastEditTime: 2022-04-20 17:29:34
  * @LastEditors: Please set LastEditors
  * @Description: 侧边栏
  * @FilePath: \vue-demo\managesystem\src\components\sideBar.vue
@@ -34,6 +34,7 @@ export default {
                 {id:6,name:'好文章',path:'/article'},
                 {id:8,name:'文档管理',path:'/document_manage'},
                 {id:9,name:'文件下载',path:'/docu_download'},
+                {id:10,name:'文件上传',path:'/upload'},
             ]
         }
     }

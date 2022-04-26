@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-02-14 10:36:41
- * @LastEditTime: 2022-04-21 11:17:04
+ * @LastEditTime: 2022-04-26 15:14:22
  * @LastEditors: Please set LastEditors
  * @Description: 前端路由管理，路由守卫
  * @FilePath: \vue-demo\managesystem\src\router\index.js
@@ -68,7 +68,17 @@ const routes = [
         path:'/upload',
         name:'文件上传',
         component:() =>import('@/views/upload/upload.vue')
-      }
+      },
+      {
+        path:'/message-board',
+        name:'留言板',
+        component:() =>import('@/views/blog/messageBoard.vue')
+      },
+      {
+        path:'/calender',
+        name:'日历',
+        component:() =>import('@/views/elementDemo/calender.vue')
+      },
     ]
   },
   {
